@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pousada Quinta do Ypuä</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Pousada Quinta do Ypuä - Reservas</h1>
+        </header>
+
+        <section id="loginForm" class="login-form">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" class="input-field" placeholder="Insira seu usuário" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" class="input-field" placeholder="Insira sua senha" required>
+
+            <button type="button" id="loginButton">Entrar</button>
+        </section>
+
+        <section id="reservationForm" class="reservation-form" style="display: none;">
+            <div class="form-group">
+                <label for="guestName">Nome do Hóspede:</label>
+                <input type="text" id="guestName" class="input-field" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="roomType">Tipo de Quarto:</label>
+                <select id="roomType" class="input-field" required>
+                    <option value="single">Quarto Individual</option>
+                    <option value="double">Quarto Duplo</option>
+                    <option value="suite">Suíte</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="checkIn">Data de Check-In:</label>
+                <input type="date" id="checkIn" class="input-field" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="checkOut">Data de Check-Out:</label>
+                <input type="date" id="checkOut" class="input-field" required>
+            </div>
+
+            <div class="price-section">
+                <h2>Preços:</h2>
+                <p id="singlePrice">Quarto Individual: R$ 100,00 por noite</p>
+                <p id="doublePrice">Quarto Duplo: R$ 150,00 por noite</p>
+                <p id="suitePrice">Suíte: R$ 200,00 por noite</p>
+            </div>
+
+            <button type="button" onclick="calculateTotal()">Calcular Custo Total</button>
+            <p id="totalCost" style="display: none;">Custo Total: R$ <span id="costAmount">0.00</span></p>
+
+            <button type="button" onclick="submitReservation()">Reservar</button>
+        </section>
+
+        <section id="reservationList" class="reservation-list" style="display: none;">
+            <!-- Reservas serão exibidas aqui -->
+        </section>
+
+        <button type="button" id="guestListButton" onclick="toggleGuestList()" style="display: none;">Ver Lista de Hóspedes</button>
+
+        <button type="button" id="logoutButton" class="logout-button" style="display: none;">Sair</button>
+        
+        <section id="guestList" class="guest-list" style="display: none;">
+            <!-- Lista de hóspedes será exibida aqui -->
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
